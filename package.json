@@ -1,0 +1,37 @@
+{
+  "name": "docxtemplater-server",
+  "version": "0.1.0",
+  "description": "creates an http server which listens for post request and responses generated docx file",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Danila Dergachev <gnomdan@yandex.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "docxtemplater": "^1.0.5",
+    "docxtemplater-chart-module": "^0.2.1",
+    "docxtemplater-image-module": "^0.3.4",
+    "express": "^4.13.3"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "request": "^2.61.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prog666/docxtemplater-server.git"
+  },
+  "keywords": [
+    "docxtemplater"
+  ],
+  "bugs": {
+    "url": "https://github.com/prog666/docxtemplater-server/issues"
+  },
+  "homepage": "https://github.com/prog666/docxtemplater-server#readme"
+}
