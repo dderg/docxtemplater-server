@@ -7,7 +7,7 @@ describe('http', function () {
     it ('should generate docx in response', function (done) {
         request.post({ 
             url: 'http://localhost:3000/',
-            form: {
+            formData: {
                 json: fs.createReadStream(__dirname + '/../example/chartExample.json'),
                 docx: fs.createReadStream(__dirname + '/../example/chartExample.docx')
             }
