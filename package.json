@@ -12,7 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.3",
-    "connect-busboy": "0.0.2",
     "docxtemplater": "^1.0.5",
     "docxtemplater-chart-module": "^0.2.1",
     "docxtemplater-image-module": "^0.3.4",
@@ -25,8 +24,7 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
-    "request": "^2.61.0",
-    "tiny_request": "^1.0.6"
+    "request": "^2.61.0"
   },
   "repository": {
     "type": "git",
