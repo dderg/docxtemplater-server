@@ -93,8 +93,8 @@ app.post('/', function (req, res) {
 				handleForm();
 			}, false);
 		} else {
-			res.status(400).end('json is not json or url');
-			console.error('json is not json or url');
+			res.status(400).end('json is not json or url: ' + req.body.json);
+			console.error('json is not json or url: ' + req.body.json);
 			return;
 		}
 		if (validUrl.isUri(req.body.docx)) {
@@ -108,8 +108,8 @@ app.post('/', function (req, res) {
 				handleForm();
 			}, true);
 		} else {
-			res.status(400).end('docx is not url');
-			console.error('docx is not url');
+			res.status(400).end('docx is not url: ' + req.body.docx);
+			console.error('docx is not url' + req.body.docx);
 			return;
 		}
 	}
