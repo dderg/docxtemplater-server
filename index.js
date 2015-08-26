@@ -24,7 +24,7 @@ app.post('/', function (req, res) {
 		if (files.docx === undefined) {
 			error = 'docx file not attached';
 		} else if (files.json === undefined) {
-			error = ('json file not attached');
+			error = 'json file not attached';
 		}
 		if (error !== undefined) {
 			console.error(error);
