@@ -51,9 +51,9 @@ var parseForm = function (req, res) {
 	});
 };
 
-var download = function (url, cb) {
+var download = function (url, cb, binary) {
 	var data = [], dataLen = 0;
-	var request = httpreq.get(url, {binary: true}, function (err, response) {
+	var request = httpreq.get(url, {binary: binary}, function (err, response) {
 		if (err) {
 			res.status(500).end(err);
 			cb(err);
@@ -91,7 +91,11 @@ app.post('/', function (req, res) {
 				json = data;
 				jsonLoaded = true;
 				handleForm();
-			});
+			}, false);
+		} else {
+			res.status(400).end('json is not json or url');
+			console.error('json is not json or url');
+			return;
 		}
 		if (validUrl.isUri(req.body.docx)) {
 			download(req.body.docx, function (error, data) {
@@ -102,7 +106,11 @@ app.post('/', function (req, res) {
 				docx = data;
 				docxLoaded = true;
 				handleForm();
-			});
+			}, true);
+		} else {
+			res.status(400).end('docx is not url');
+			console.error('docx is not url');
+			return;
 		}
 	}
 });
