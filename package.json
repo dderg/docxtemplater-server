@@ -16,7 +16,10 @@
     "docxtemplater-chart-module": "^0.2.1",
     "docxtemplater-image-module": "^0.3.4",
     "express": "^4.13.3",
-    "formidable": "^1.0.17"
+    "formidable": "^1.0.17",
+    "httpreq": "^0.4.13",
+    "is-json": "^1.2.5",
+    "valid-url": "^1.0.9"
   },
   "directories": {
     "example": "example",
