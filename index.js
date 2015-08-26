@@ -20,7 +20,7 @@ app.post('/', function (req, res) {
 	var form = new formidable.IncomingForm();
 
 	form.parse(req, function(err, fields, files) {
-		let error;
+		var error;
 		if (files.docx === undefined) {
 			error = 'docx file not attached';
 		} else if (files.json === undefined) {
