@@ -88,7 +88,7 @@ app.post('/', function (req, res) {
 					res.status(400).end('could not download json with link: ' + req.body.json);
 					return;
 				}
-				json = data;
+				json = JSON.parse(data);
 				jsonLoaded = true;
 				handleForm();
 			}, false);
