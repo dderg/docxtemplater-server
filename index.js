@@ -20,11 +20,15 @@ app.post('/', function (req, res) {
 	var form = new formidable.IncomingForm();
 
 	form.parse(req, function(err, fields, files) {
+		let error;
 		if (files.docx === undefined) {
-			res.status('400').end('docx file not attached');
-			return;
+			error = 'docx file not attached';
 		} else if (files.json === undefined) {
-			res.status('400').end('json file not attached');
+			error = ('json file not attached');
+		}
+		if (error !== undefined) {
+			console.error(error);
+			res.status('400').end(error);
 			return;
 		}
 		var content = fs.readFileSync(files.docx.path, "binary");
