@@ -5,6 +5,10 @@ var expect = require('chai').expect;
 describe('http', function () {
     this.timeout(10000)
     it ('should generate docx in response', function (done) {
+        var writeStream = fs.createWriteStream(__dirname + '/../chart.docx');
+        writeStream.on('close', function () {
+            done();
+        })
         request.post({ 
             url: 'http://localhost:3000/',
             formData: {
@@ -17,8 +21,7 @@ describe('http', function () {
         })
         .on('response', function (response) {
             expect(response.statusCode).to.equal(200);
-            done();
         })
-        .pipe(fs.createWriteStream(__dirname + '/../chart.docx'));
+        .pipe(writeStream);
     })
 })
