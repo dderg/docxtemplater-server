@@ -19,8 +19,6 @@ var imageModule = new ImageModule();
 
 
 var render = function (content, data) {
-	console.log(content === undefined);
-	console.log(data === undefined);
 	var doc = new Docxtemplater()
 		.attachModule(chartModule)
 		.attachModule(imageModule)
